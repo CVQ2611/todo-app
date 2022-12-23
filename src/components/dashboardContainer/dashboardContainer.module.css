@@ -1,0 +1,27 @@
+.wrapper {
+    width: 100%;
+}
+
+.content {
+    background-color: white;
+    width: 100%;
+    padding-top: 12px;
+}
+
+.clock {
+    margin-top: 20px;
+    margin-bottom: 24px;
+    font-size: 50px;
+    text-align: center;
+    color: #D8605B;
+    letter-spacing: 0.06em;
+}
+
+.good-time {
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.06em;
+    color: rgba(0, 0, 0, 0.75);
+}

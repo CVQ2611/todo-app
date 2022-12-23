@@ -1,0 +1,43 @@
+.header-image {
+    width: 287px;
+    height: 215px;
+    margin: auto;
+    padding-top: 68px;
+}
+
+.header-text {
+    margin-top: 7px;
+    width: 100%;
+    text-align: center;
+}
+
+.text-inner {
+    max-width: 227px;
+    margin: auto;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+}
+
+.text-title {
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.form {
+    margin-top: 17px;
+    width: 100%;
+    text-align: center;
+}
+
+.label {
+    width: 267px;
+    margin: auto;
+}

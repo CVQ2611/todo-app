@@ -1,0 +1,66 @@
+.wrapper {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 38px;
+}
+
+.header {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.06em;
+    color: rgba(0, 0, 0, 0.75);
+    padding-left: 20px;
+}
+
+.box-todo {
+    width: 323px;
+    margin: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+}
+
+.box-header {
+    display: flex;
+    padding: 18px 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-name {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.06em;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.box-content {
+    overflow: scroll;
+    height: 154px;
+    padding-bottom: 16px;
+}
+
+.items {
+    display: flex;
+    margin-bottom: 24px;
+    padding: 0 16px;
+    align-items: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.06em;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.checkbox {
+    margin: 0;
+}
+
+.work {
+    margin: 0;
+    margin-left: 4px;
+}
