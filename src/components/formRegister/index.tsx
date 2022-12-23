@@ -5,6 +5,9 @@ import { schemaRegister } from "../../units";
 import Button from "../button";
 import styles from "./formRegister.module.css";
 import ErrorText from "../commonts/erorrText/inde";
+import { useDispatch } from "react-redux";
+import { loadingSlice } from "../../store/reducers/loading";
+import { succesSlice } from "../../store/reducers/succes";
 const cx = classNames.bind(styles);
 
 interface Inputs {
@@ -14,11 +17,16 @@ interface Inputs {
     confirmPassword: string
 };
 function RegisterForm() {
+    const dispath = useDispatch()
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>(
         { resolver: yupResolver(schemaRegister) }
     )
     const userOnSubmit: SubmitHandler<Inputs> = (data) => {
-        console.log(data);
+        dispath(loadingSlice.actions.SET_LOADING())
+        setTimeout(() => {
+            dispath(loadingSlice.actions.SET_LOADING())
+            dispath(succesSlice.actions.SET_SUCCESS())
+        }, 2000)
     }
     return (
         <form className={cx('form-register')} onSubmit={handleSubmit(userOnSubmit)}>

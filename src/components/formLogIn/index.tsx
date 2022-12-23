@@ -1,5 +1,10 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import classNames from "classnames/bind";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loadingSlice } from "../../store/reducers/loading";
+import { schemaLogin } from "../../units";
 import Button from "../button";
 import ErrorText from "../commonts/erorrText/inde";
 import styles from "./formLogIn.module.css";
@@ -10,9 +15,18 @@ interface Inputs {
     password: string,
 }
 function FormLogIn() {
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>()
+    const navigatee = useNavigate()
+    const dispath = useDispatch()
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>(
+        { resolver: yupResolver(schemaLogin) }
+    )
     const userOnLogIn: SubmitHandler<Inputs> = (data) => {
-        console.log(data);
+        dispath(loadingSlice.actions.SET_LOADING())
+        setTimeout(() => {
+            dispath(loadingSlice.actions.SET_LOADING())
+            navigatee('/dashboard')
+        }, 2000)
+
     }
     return (
         <form className={cx('form-logIn')} onSubmit={handleSubmit(userOnLogIn)}>

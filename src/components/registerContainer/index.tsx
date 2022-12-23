@@ -1,28 +1,40 @@
 import classNames from "classnames/bind";
+import { loadingApp, successNoti } from "../../store/selectors";
 import RegisterForm from "../formRegister";
+import { Modal, Spin } from "antd";
 import ImageHader from "../imageHeader";
 import LabelUser from "../labelUser";
 import styles from './registerContainer.module.css';
+import { useSelector } from "react-redux";
 const cx = classNames.bind(styles);
 function RegisterContainer() {
+    const isLoading = useSelector(loadingApp);
+    const isSucces = useSelector(successNoti);
+    if (isSucces) (
+        Modal.success({
+            content: 'Success !',
+        })
+    )
     return (
-        <div className={cx('wrapper')}>
-            <div className={cx('header-image')}>
-                <ImageHader />
-            </div>
-            <div className={cx('header-text')}>
-                <div className={cx('text-inner')}>
-                    Get’s things done with TODO
+        <Spin spinning={isLoading} >
+            <div className={cx('wrapper')}>
+                <div className={cx('header-image')} >
+                    <ImageHader />
                 </div>
-                <div className={cx('text-title')}>
-                    Let’s help you meet up your tasks
+                <div className={cx('header-text')}>
+                    <div className={cx('text-inner')}>
+                        Get’s things done with TODO
+                    </div>
+                    <div className={cx('text-title')}>
+                        Let’s help you meet up your tasks
+                    </div>
                 </div>
+                <div className={cx('form')}>
+                    <RegisterForm />
+                </div>
+                <LabelUser to={'login'}>Already have an account ?</LabelUser>
             </div>
-            <div className={cx('form')}>
-                <RegisterForm />
-            </div>
-            <LabelUser to={'login'}>Already have an account ?</LabelUser>
-        </div>
+        </Spin>
     )
 }
 

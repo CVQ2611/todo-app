@@ -5,6 +5,10 @@
     border: none;
 }
 
+.wrapper-button:hover {
+    cursor: pointer;
+}
+
 .primary {
     width: 315px;
     height: 56px;
