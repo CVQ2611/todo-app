@@ -5,14 +5,22 @@ import { Modal, Spin } from "antd";
 import ImageHader from "../imageHeader";
 import LabelUser from "../labelUser";
 import styles from './registerContainer.module.css';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { succesSlice } from "../../store/reducers/succes";
+import { useNavigate } from "react-router-dom";
 const cx = classNames.bind(styles);
 function RegisterContainer() {
+    const dispath = useDispatch()
+    const navigate = useNavigate()
     const isLoading = useSelector(loadingApp);
     const isSucces = useSelector(successNoti);
     if (isSucces) (
         Modal.success({
-            content: 'Success !',
+            content: 'Success ! Go to Log In?',
+            onOk() {
+                dispath(succesSlice.actions.SET_SUCCESS())
+                navigate('/login')
+            }
         })
     )
     return (

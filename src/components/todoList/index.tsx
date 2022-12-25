@@ -3,7 +3,7 @@ import styles from './todoList.module.css';
 import { MdAddCircleOutline } from 'react-icons/md'
 import Button from "../button";
 import { useEffect, useState } from "react";
-import { getData } from "../../services/getData/inde";
+import { getData } from "../../services/getData";
 import moment from "moment";
 
 const cx = classNames.bind(styles);
