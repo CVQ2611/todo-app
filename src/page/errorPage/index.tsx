@@ -6,7 +6,7 @@ function ErrorPage() {
         <Result
             status="500"
             title="500"
-            subTitle="Sorry, something went wrong."
+            subTitle="Coming Soon!."
             extra={<Button primary to={'/'}>Back Home</Button>}
         />
     )
